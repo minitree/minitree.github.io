@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const rollButton = document.getElementById("rollButton");
-    const resultElement = document.getElementById("result");
     const enableExtraDiceLakeCheckbox = document.getElementById("enableExtraDiceLakes");
     const enableExtraDiceRiverCheckbox = document.getElementById("enableExtraDiceRivers");
     const dieImages = [
@@ -15,17 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     rollButton.addEventListener("click", function () {
-        const BothChecked = enableExtraDiceLakeCheckbox.checked & enableExtraDiceRiverCheckbox.checked ? 8 : 4
-        const numDiceLake = enableExtraDiceLakeCheckbox.checked ? 6 : 4;
-        const numDiceRiver = enableExtraDiceRiverCheckbox.checked ? 6 : 4;
-        const numDice = Math.max(BothChecked, numDiceLake, numDiceRiver)
-        const rollResults = [];
+        const numDiceLake  = enableExtraDiceLakeCheckbox.checked  ? 2 : 0;
+        const numDiceRiver = enableExtraDiceRiverCheckbox.checked ? 2 : 0;
+        const numDice = 4
         for (let i = 0; i < numDice; i++) {
             const randomNumber = Math.floor(Math.random() * 6) + 1;
             const imagePath = `images/die${i + 1}-${randomNumber}.jpg`;
             dieImages[i].src = imagePath;
-            rollResults.push(randomNumber);
         }
-        const total = rollResults.reduce((a, b) => a + b, 0);
+        for (let j = 0; j < numDiceLake; j++) {
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            const imagePath = `images/lake${j + 1}-${randomNumber}.jpg`;
+            dieImages[4+j].src = imagePath;
+        }
+        for (let k = 0; k < numDiceRiver; k++) {
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            const imagePath = `images/river${k + 1}-${randomNumber}.jpg`;
+            dieImages[6+k].src = imagePath;
+        }
     });
 });
