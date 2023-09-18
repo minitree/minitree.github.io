@@ -13,7 +13,32 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dieImage8"),
     ];
 
+    for (let i = 4; i < dieImages.length; i++) {
+        dieImages[i].style.display = "none";
+    }
+
+    enableExtraDiceLakeCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+            dieImages[4].style.display = "inline-block";
+            dieImages[5].style.display = "inline-block";
+        } else {
+            dieImages[4].style.display = "none";
+            dieImages[5].style.display = "none";
+        }
+    });
+
+    enableExtraDiceRiverCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+            dieImages[6].style.display = "inline-block";
+            dieImages[7].style.display = "inline-block";
+        } else {
+            dieImages[6].style.display = "none";
+            dieImages[7].style.display = "none";
+        }
+    });
+
     rollButton.addEventListener("click", function () {
+
         const numDiceLake  = enableExtraDiceLakeCheckbox.checked  ? 2 : 0;
         const numDiceRiver = enableExtraDiceRiverCheckbox.checked ? 2 : 0;
         const numDice = 4
@@ -26,11 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const randomNumber = Math.floor(Math.random() * 6) + 1;
             const imagePath = `images/lake${j + 1}-${randomNumber}.jpg`;
             dieImages[4+j].src = imagePath;
+            dieImages[4+j].style.display = "inline-block";
         }
         for (let k = 0; k < numDiceRiver; k++) {
             const randomNumber = Math.floor(Math.random() * 6) + 1;
             const imagePath = `images/river${k + 1}-${randomNumber}.jpg`;
             dieImages[6+k].src = imagePath;
+            dieImages[6+k].style.display = "inline-block";
         }
     });
 });
