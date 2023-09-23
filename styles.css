@@ -53,7 +53,9 @@ button:hover {
 #dieImage5,
 #dieImage6,
 #dieImage7,
-#dieImage8 {
+#dieImage8,
+#dieImage9,
+#dieImage10 {
   display: inline-block; /* Display dice images in a horizontal line */
   width: 100px;
   height: 100px;

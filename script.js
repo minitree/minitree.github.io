@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rollButton = document.getElementById("rollButton");
     const enableExtraDiceLakeCheckbox = document.getElementById("enableExtraDiceLakes");
     const enableExtraDiceRiverCheckbox = document.getElementById("enableExtraDiceRivers");
+    const enableExtraDiceForestCheckbox = document.getElementById("enableExtraDiceForests");
     const dieImages = [
         document.getElementById("dieImage1"),
         document.getElementById("dieImage2"),
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dieImage6"),
         document.getElementById("dieImage7"),
         document.getElementById("dieImage8"),
+        document.getElementById("dieImage9"),
+        document.getElementById("dieImage10"),
     ];
 
     for (let i = 4; i < dieImages.length; i++) {
@@ -37,10 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    enableExtraDiceForestCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+            dieImages[8].style.display = "inline-block";
+            dieImages[9].style.display = "inline-block";
+        } else {
+            dieImages[8].style.display = "none";
+            dieImages[9].style.display = "none";
+        }
+    });
+
     rollButton.addEventListener("click", function () {
 
         const numDiceLake  = enableExtraDiceLakeCheckbox.checked  ? 2 : 0;
         const numDiceRiver = enableExtraDiceRiverCheckbox.checked ? 2 : 0;
+        const numDiceForest = enableExtraDiceForestCheckbox.checked ? 2 : 0;
         const numDice = 4
         for (let i = 0; i < numDice; i++) {
             const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -58,6 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const imagePath = `images/river${k + 1}-${randomNumber}.jpg`;
             dieImages[6+k].src = imagePath;
             dieImages[6+k].style.display = "inline-block";
+        }
+        for (let l = 0; l < numDiceForest; l++) {
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            const imagePath = `images/forest${l + 1}-${randomNumber}.png`;
+            dieImages[8+l].src = imagePath;
+            dieImages[8+l].style.display = "inline-block";
         }
     });
 });
