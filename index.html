@@ -8,31 +8,67 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
+    <div class="container-wrapper">
     <div class="container">
-    <div class="roll-container">
-        <button id="rollButton">Roll!</button>
-    </div>
-    <div class="dice-container">
-        <div class="dice">
-            <img id="dieImage1"  src="images/allroutes.jpg" alt="Die 1">
-            <img id="dieImage2"  src="images/allroutes.jpg" alt="Die 2">
-            <img id="dieImage3"  src="images/allroutes.jpg" alt="Die 3">
-            <img id="dieImage4"  src="images/allintersections.jpg" alt="Die 4">
-            <img id="dieImage5"  src="images/alllakes.jpg" alt="Die 5" style="display: none;">
-            <img id="dieImage6"  src="images/alllakes.jpg" alt="Die 6" style="display: none;">
-            <img id="dieImage7"  src="images/allrivers.jpg" alt="Die 7" style="display: none;">
-            <img id="dieImage8"  src="images/allrivers.jpg" alt="Die 8" style="display: none;">
-            <img id="dieImage9"  src="images/allforests.jpg" alt="Die 9" style="display: none;">
-            <img id="dieImage10" src="images/allforests.jpg" alt="Die 10" style="display: none;">
+        <div class="roll-container">
+            <button id="rollButton">Roll!</button>
+        </div>
+        <div class="dice-container">
+            <div class="dice">
+                <img id="dieImage1"  src="images/allroutes.jpg" alt="Die 1">
+                <img id="dieImage2"  src="images/allroutes.jpg" alt="Die 2">
+                <img id="dieImage3"  src="images/allroutes.jpg" alt="Die 3">
+                <img id="dieImage4"  src="images/allintersections.jpg" alt="Die 4">
+                <img id="dieImage5"  src="images/alllakes.jpg" alt="Die 5" style="display: none;">
+                <img id="dieImage6"  src="images/alllakes.jpg" alt="Die 6" style="display: none;">
+                <img id="dieImage7"  src="images/allrivers.jpg" alt="Die 7" style="display: none;">
+                <img id="dieImage8"  src="images/allrivers.jpg" alt="Die 8" style="display: none;">
+                <img id="dieImage9"  src="images/alllava.jpg" alt="Die 9" style="display: none;">
+                <img id="dieImage10" src="images/alllava.jpg" alt="Die 10" style="display: none;">
+                <img id="dieImage11" src="images/allmeteor.jpg" alt="Die 11" style="display: none;">
+                <img id="dieImage12" src="images/allmeteor.jpg" alt="Die 12" style="display: none;">
+            </div>
+        </div>
+        <div class="side-container">
+            <input type="checkbox" id="enableExtraDiceLakes"> Lakes
+            <input type="checkbox" id="enableExtraDiceRivers"> Rivers
+            <input type="checkbox" id="enableExtraDiceLava"> Lava
+            <input type="checkbox" id="enableExtraDiceMeteors"> Meteors
         </div>
     </div>
-    <div class="side-container">
-        <input type="checkbox" id="enableExtraDiceLakes"> Lakes
-        <input type="checkbox" id="enableExtraDiceRivers"> Rivers
-        <input type="checkbox" id="enableExtraDiceForests"> Forests
+    <div class="container">
+        <div class="roll-container">
+            <button id="rollButton2">Roll!</button>
+        </div>
+        <div class="dice-container">
+            <div class="dice">
+                <img id="die2Image1"  src="images-challenge/allroutes.jpg" alt="Die 1">
+                <img id="die2Image2"  src="images-challenge/allroutes.jpg" alt="Die 2">
+                <img id="die2Image3"  src="images-challenge/allspecials.jpg" alt="Die 3">
+                <img id="die2Image4"  src="images-challenge/allchallengeinters.jpg" alt="Die 4">
+                <img id="die2Image5"  src="images-challenge/alllakes.jpg" alt="Die 5" style="display: none;">
+                <img id="die2Image6"  src="images-challenge/alllakes.jpg" alt="Die 6" style="display: none;">
+                <img id="die2Image7"  src="images-challenge/allrivers.jpg" alt="Die 7" style="display: none;">
+                <img id="die2Image8"  src="images-challenge/allrivers.jpg" alt="Die 8" style="display: none;">
+                <img id="die2Image9"  src="images-challenge/allforests.jpg" alt="Die 9" style="display: none;">
+                <img id="die2Image10" src="images-challenge/allforests.jpg" alt="Die 10" style="display: none;">
+                <img id="die2Image11" src="images-challenge/alltrails.jpg" alt="Die 11" style="display: none;">
+                <img id="die2Image12" src="images-challenge/alltrails.jpg" alt="Die 12" style="display: none;">
+                <img id="die2Image13"  src="images-challenge/alldesert.jpg" alt="Die 13" style="display: none;">
+                <img id="die2Image14" src="images-challenge/alldesert.jpg" alt="Die 14" style="display: none;">
+                <img id="die2Image15" src="images-challenge/allcanyon.jpg" alt="Die 15" style="display: none;">
+                <img id="die2Image16" src="images-challenge/allcanyon.jpg" alt="Die 16" style="display: none;">
+            </div>
+        </div>
+        <div class="side-container">
+            <input type="checkbox" id="enableExtraDiceForests2"> Forests
+            <input type="checkbox" id="enableExtraDiceTrails2"> Trails
+            <input type="checkbox" id="enableExtraDiceDesert2"> Desert
+            <input type="checkbox" id="enableExtraDiceCanyon2"> Canyon
+        </div>
     </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script-base.js"></script>
+    <script src="script-challenge.js"></script>
 </body>
 </html>
- 

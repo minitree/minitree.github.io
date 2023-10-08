@@ -3,6 +3,12 @@ body {
   background-color: #f0f0f0;
   text-align: center;
 }
+.container-wrapper {
+  display: flex; /* Use flexbox to arrange containers side by side */
+  justify-content: space-between; /* Create space between containers */
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the containers horizontally */
+}
 
 .container {
   background-color: #fff;
@@ -55,11 +61,33 @@ button:hover {
 #dieImage7,
 #dieImage8,
 #dieImage9,
-#dieImage10 {
+#dieImage10,
+#dieImage11,
+#dieImage12,
+#die2Image1,
+#die2Image2,
+#die2Image3,
+#die2Image4,
+#die2Image5,
+#die2Image6,
+#die2Image7,
+#die2Image8,
+#die2Image9,
+#die2Image10,
+#die2Image11,
+#die2Image12, 
+#die2Image13,
+#die2Image14,
+#die2Image15,
+#die2Image16 {
   display: inline-block; /* Display dice images in a horizontal line */
   width: 100px;
   height: 100px;
   margin: 10px 10px; /* Add some spacing between dice images */
+}
+
+img.selected {
+  opacity: 0.2; /* You can adjust this value to control the level of dimming */
 }
 
 #result {

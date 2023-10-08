@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const rollButton = document.getElementById("rollButton");
+
     const enableExtraDiceLakeCheckbox = document.getElementById("enableExtraDiceLakes");
     const enableExtraDiceRiverCheckbox = document.getElementById("enableExtraDiceRivers");
-    const enableExtraDiceForestCheckbox = document.getElementById("enableExtraDiceForests");
+    const enableExtraDiceLavaCheckbox = document.getElementById("enableExtraDiceLava");
+    const enableExtraDiceMeteorCheckbox = document.getElementById("enableExtraDiceMeteors");
+
     const dieImages = [
         document.getElementById("dieImage1"),
         document.getElementById("dieImage2"),
@@ -14,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dieImage8"),
         document.getElementById("dieImage9"),
         document.getElementById("dieImage10"),
+        document.getElementById("dieImage11"),
+        document.getElementById("dieImage12"),
     ];
 
     for (let i = 4; i < dieImages.length; i++) {
@@ -40,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    enableExtraDiceForestCheckbox.addEventListener("change", function () {
+    enableExtraDiceLavaCheckbox.addEventListener("change", function () {
         if (this.checked) {
             dieImages[8].style.display = "inline-block";
             dieImages[9].style.display = "inline-block";
@@ -50,11 +56,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    enableExtraDiceMeteorCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+            dieImages[10].style.display = "inline-block";
+            dieImages[11].style.display = "inline-block";
+        } else {
+            dieImages[10].style.display = "none";
+            dieImages[11].style.display = "none";
+        }
+    });
+
     rollButton.addEventListener("click", function () {
+
+        dieImages.forEach((image) => {
+            image.classList.remove("selected");
+        });
 
         const numDiceLake  = enableExtraDiceLakeCheckbox.checked  ? 2 : 0;
         const numDiceRiver = enableExtraDiceRiverCheckbox.checked ? 2 : 0;
-        const numDiceForest = enableExtraDiceForestCheckbox.checked ? 2 : 0;
         const numDice = 4
         for (let i = 0; i < numDice; i++) {
             const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -73,11 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
             dieImages[6+k].src = imagePath;
             dieImages[6+k].style.display = "inline-block";
         }
-        for (let l = 0; l < numDiceForest; l++) {
-            const randomNumber = Math.floor(Math.random() * 6) + 1;
-            const imagePath = `images/forest${l + 1}-${randomNumber}.png`;
-            dieImages[8+l].src = imagePath;
-            dieImages[8+l].style.display = "inline-block";
-        }
+    });
+
+    dieImages.forEach((image) => {
+        image.addEventListener("click", function () {
+            image.classList.toggle("selected");
+        });
     });
 });
