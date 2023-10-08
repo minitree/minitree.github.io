@@ -1,6 +1,6 @@
 # minitree.github.io
 
-Most of it was written by ChatGPT - and then expanded by me - not a frontend expert. Sorry if it is horrible.
+Most of it was written by ChatGPT - and then expanded by me - not a frontend expert. Sorry if (if?) it is horrible.
 
 
 I like this game and I just want to be able to roll the dice at night - physical dice do *klunk klunk* and it might disturb the people who are asleep.
